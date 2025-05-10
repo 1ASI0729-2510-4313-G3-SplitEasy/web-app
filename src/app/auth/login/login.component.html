@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+
+<section class="login-section d-flex align-items-center justify-content-center">
+  <div class="login-box shadow p-4 rounded">
+    <h2 class="text-center mb-4">
+      Login</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="********" required />
+      </div>
+      <button type="submit" class="btn w-100 signin-button">Login</button>
+      <div class="text-center mt-3">
+        <a [routerLink]="['/forgot-password']" class="text-decoration-none text-secondary">Forgot your password?</a>
+        <br>
+        <a [routerLink]="['/register']" class="text-decoration-none text-secondary">New here? Create an account</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-the-footer></app-the-footer>
