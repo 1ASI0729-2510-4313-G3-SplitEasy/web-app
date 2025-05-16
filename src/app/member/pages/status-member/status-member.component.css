@@ -1,0 +1,69 @@
+/* member-contributions.component.css */
+.contributions-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.summary-table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.summary-table th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+  background-color: #42A5F5;
+  width: 250px;
+}
+
+.summary-table td {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+.button-container {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.contribution-btn {
+  padding: 10px 20px;
+  background-color: #1565C0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contribution-btn:hover {
+  background-color: #42A5F5;
+}
+
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.member-table th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.member-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.member-table th {
+  background-color: #42A5F5;
+  color: white;
+}
