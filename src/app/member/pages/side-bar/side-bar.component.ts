@@ -3,7 +3,7 @@ import { Router } from '@angular/router';  // Importa Router
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-side-bar-representative',
+  selector: 'app-side-bar-member',
   imports: [
     RouterLink,
     RouterLinkActive,
@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']  // Fíjate que era styleUrls, no styleUrl
 })
-export class SideBarRepresentativeComponent {
+export class SideBarMemberComponent {
   userName = 'John Doe';
 
   constructor(private router: Router) {}  // Inyecta Router aquí
