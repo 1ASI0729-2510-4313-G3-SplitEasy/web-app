@@ -15,12 +15,14 @@
         </div>
 
         <ul class="nav-links">
-          <li><a routerLink="/representative/home" routerLinkActive="active">Home</a></li>
-          <li><a routerLink="/representative/members" routerLinkActive="active">Members</a></li>
-          <li><a routerLink="/representative/bills" routerLinkActive="active">Bills</a></li>
-          <li><a routerLink="/representative/contributions" routerLinkActive="active">Contributions</a></li>
-          <li><a routerLink="/representative/settings" routerLinkActive="active">Settings</a></li>
+          <li><a routerLink="/member/home" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/member/contributions" routerLinkActive="active">Contributions</a></li>
+          <li><a routerLink="/member/status" routerLinkActive="active">Status</a></li>
+          <li><a routerLink="/member/settings" routerLinkActive="active">Settings</a></li>
         </ul>
+      </div>
+      <div class="logout-container">
+        <button class="logout-btn" (click)="logout()">Logout</button>
       </div>
     </section>
   </nav>

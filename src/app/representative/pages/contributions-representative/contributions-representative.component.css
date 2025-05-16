@@ -1,0 +1,69 @@
+.contributions-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.summary-table th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  background-color: white;
+  color: white;
+}
+
+.summary-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  background-color: white;
+  color: black;
+}
+
+.summary-table th {
+  width: 40%;
+  background-color: #42A5F5;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details-table th {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  background-color: white;
+  color: white;
+}
+
+.details-table td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.details-table th {
+  background-color: #42A5F5;
+}
+
+.status-paid {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}

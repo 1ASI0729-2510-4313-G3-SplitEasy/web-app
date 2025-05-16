@@ -19,19 +19,43 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.initializeMockUsers();
+  }
+
+  initializeMockUsers() {
+    const existing = localStorage.getItem('mockUsers');
+    if (!existing) {
+      const users = [
+        {
+          email: 'member@example.com',
+          password: 'member123',
+          role: 'member'
+        },
+        {
+          email: 'representative@example.com',
+          password: 'rep123',
+          role: 'representative'
+        }
+      ];
+      localStorage.setItem('mockUsers', JSON.stringify(users));
+    }
+  }
 
   onSubmit() {
-    const storedUser = localStorage.getItem('mockUser');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      if (user.email === this.email && user.password === this.password) {
+    const storedUsers = localStorage.getItem('mockUsers');
+    if (storedUsers) {
+      const users = JSON.parse(storedUsers);
+      const user = users.find(
+        (u: any) => u.email === this.email && u.password === this.password
+      );
+      if (user) {
         alert('Login successful!');
-        // Redirigir a la página correcta según el rol del usuario
+        localStorage.setItem('currentUser', JSON.stringify(user));
         if (user.role === 'representative') {
-          this.router.navigate(['/representative/home']); // Página para el representante
+          this.router.navigate(['/representative/home']);
         } else {
-          this.router.navigate(['/home']); // Página para el miembro
+          this.router.navigate(['/member/home']);
         }
         return;
       }
@@ -39,3 +63,4 @@ export class LoginComponent {
     this.errorMessage = 'Invalid credentials';
   }
 }
+

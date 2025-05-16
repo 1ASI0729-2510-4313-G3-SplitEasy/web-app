@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {SideBarRepresentativeComponent} from './component/side-bar/side-bar.component';
+import {SideBarRepresentativeComponent} from './pages/side-bar/side-bar.component';
 
 @Component({
   selector: 'app-representative-page',

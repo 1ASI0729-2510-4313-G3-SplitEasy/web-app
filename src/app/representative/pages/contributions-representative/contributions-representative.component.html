@@ -1,0 +1,51 @@
+<div class="contributions-container">
+  <h2>Contribution Summary</h2>
+
+  <!-- Table 1: Summary -->
+  <table class="summary-table">
+    <tr>
+      <th>Total Amount Contributed</th>
+      <td>{{ summary.totalContributed | currency:'USD' }}</td>
+    </tr>
+    <tr>
+      <th>Monthly Goal</th>
+      <td>{{ summary.monthlyGoal | currency:'USD' }}</td>
+    </tr>
+    <tr>
+      <th>% Compliance</th>
+      <td>{{ summary.compliancePercent }}%</td>
+    </tr>
+    <tr>
+      <th>Number of Contributors</th>
+      <td>{{ summary.contributors }}/{{ summary.totalMembers }}</td>
+    </tr>
+  </table>
+
+  <!-- Table 2: Member Contributions -->
+  <h3>Member Contributions</h3>
+
+  <table class="details-table">
+    <thead>
+    <tr>
+      <th>Member</th>
+      <th>Amount Contributed</th>
+      <th>Assigned Amount</th>
+      <th>Deadline</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of contributions">
+      <td>{{ c.memberName }}</td>
+      <td>{{ c.contributed | currency:'USD' }}</td>
+      <td>{{ c.assigned | currency:'USD' }}</td>
+      <td>{{ c.deadline | date:'MM/dd/yyyy' }}</td>
+      <td>
+          <span [ngClass]="{'status-paid': c.status === 'Paid', 'status-pending': c.status === 'Pending'}">
+            {{ c.status }}
+          </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

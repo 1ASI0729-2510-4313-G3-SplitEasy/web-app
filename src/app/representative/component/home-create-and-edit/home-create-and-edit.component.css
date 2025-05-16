@@ -1,0 +1,13 @@
+button[color="primary"] {
+  background-color: #1565C0;
+  color: white;
+  border-radius: 100px;
+  margin-right: 4px;
+}
+
+button[color="primary"]:hover{
+  background-color: #42A5F5;
+  color: white;
+  border-radius: 100px;
+}
+

@@ -1,0 +1,34 @@
+<div class="table-wrapper">
+  <app-home-create-and-edit
+    (cancelRequested)="onCancelRequested()"
+    (homeAddRequested)="onHomeAddRequested($event)"
+    (homeUpdateRequested)="onHomeUpdateRequested($event)"
+    [home]="homeData"
+    [editMode]="editMode" />
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort By ID">ID</th>
+      <td mat-cell *matCellDef="let home">{{ home.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort By TITLE">NAME</th>
+      <td mat-cell *matCellDef="let home">{{ home.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort By DESCRIPTION">DESCRIPTION</th>
+      <td mat-cell *matCellDef="let home">{{ home.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let home">
+        <a (click)="onEditItem(home)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+        <a (click)="onDeleteItem(home)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"
+        [ngClass]="{ 'editable-row': homeData && homeData.id == row.id }"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+

@@ -1,0 +1,62 @@
+<div class="members-container">
+  <h2>Members</h2>
+
+  <table class="members-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Total Contributed</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let member of members">
+      <td>{{ member.name }}</td>
+      <td>{{ member.email }}</td>
+      <td>{{ member.role }}</td>
+      <td>{{ member.totalContribution | currency:'USD' }}</td>
+      <td>
+        <button (click)="viewProfile(member)" class="view-btn">See</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="add-member-container">
+    <button class="add-btn" (click)="addMember()">Add Member</button>
+  </div>
+
+  <!-- Member Details Section -->
+  <div class="member-details" *ngIf="selectedMember">
+    <div class="profile-header">
+      <img [src]="'https://i.pravatar.cc/150?u=' + selectedMember.email" alt="Member photo" class="profile-img">
+      <div class="profile-info">
+        <h3>{{ selectedMember.name }}</h3>
+        <p><strong>Email:</strong> {{ selectedMember.email }}</p>
+        <p><strong>Current State:</strong> {{ selectedMember.state || 'Active' }}</p>
+        <p><strong>Role:</strong> {{ selectedMember.role }}</p>
+        <p><strong>Total Contributed:</strong> {{ selectedMember.totalContribution | currency:'USD' }}</p>
+      </div>
+    </div>
+
+    <h4>Contribution History</h4>
+    <table class="members-table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contribution of selectedMember.history">
+        <td>{{ contribution.title }}</td>
+        <td>{{ contribution.amount | currency:'USD' }}</td>
+        <td>{{ contribution.date | date:'MM/dd/yyyy' }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

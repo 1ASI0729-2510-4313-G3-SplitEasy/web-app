@@ -1,0 +1,30 @@
+{
+  "homes": [
+    {
+      "id": "1",
+      "name": "Casa principal cambio",
+      "description": "Hogar familiar",
+      "membersCount": 3,
+      "currency": "USD",
+      "totalContributed": 1234.56,
+      "lastBill": {
+        "description": "Electricidad",
+        "amount": 150
+      },
+      "creationDateFormatted": "2025-05-16"
+    },
+    {
+      "id": "2",
+      "name": "Casa principal2",
+      "description": "Hogar familiar2",
+      "membersCount": 3,
+      "currency": "PEN",
+      "totalContributed": 789,
+      "lastBill": {
+        "description": "Agua",
+        "amount": 50
+      },
+      "creationDateFormatted": "2024-11-10"
+    }
+  ]
+}

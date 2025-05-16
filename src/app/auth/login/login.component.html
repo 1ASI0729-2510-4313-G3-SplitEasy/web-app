@@ -7,11 +7,13 @@
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
+        <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control"
+               placeholder="member@example.com or representative@example.com" required />
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="********" required />
+        <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control"
+               placeholder="member123 or rep123" required />
       </div>
       <button type="submit" class="btn w-100 signin-button">Login</button>
       <div class="text-center mt-3">

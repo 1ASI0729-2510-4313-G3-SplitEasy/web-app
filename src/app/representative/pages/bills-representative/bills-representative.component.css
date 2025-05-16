@@ -1,0 +1,60 @@
+.bills-container {
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.bills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.bills-table th {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  color: white;
+}
+
+.bills-table td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.bills-table th {
+  background-color: #42A5F5;
+}
+
+.view-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background-color: #388e3c;
+}
+
+.add-bill-container {
+  text-align: right;
+}
+
+.add-btn {
+  background-color: #1565C0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #42A5F5;
+}

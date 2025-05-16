@@ -1,0 +1,71 @@
+<div class="settings-container">
+  <h2>Settings</h2>
+
+  <!-- House Info -->
+  <section class="settings-section">
+    <h3>Household Information</h3>
+    <label>
+      House Name:
+      <input type="text" [(ngModel)]="settings.houseName" />
+    </label>
+    <label>
+      Description:
+      <textarea [(ngModel)]="settings.description"></textarea>
+    </label>
+  </section>
+
+  <!-- Preferences -->
+  <section class="settings-section">
+    <h3>Preferences</h3>
+    <label>
+      Default Currency:
+      <select [(ngModel)]="settings.currency">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="PEN">PEN (S/)</option>
+      </select>
+    </label>
+    <label>
+      Language:
+      <select [(ngModel)]="settings.language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+      </select>
+    </label>
+  </section>
+
+  <!-- Contributions -->
+  <section class="settings-section">
+    <h3>Contribution Rules</h3>
+    <label>
+      Monthly Goal:
+      <input type="number" [(ngModel)]="settings.monthlyGoal" />
+    </label>
+    <label>
+      Due Date (Each Month):
+      <input type="date" [(ngModel)]="settings.dueDate" />
+    </label>
+  </section>
+
+  <!-- Notifications -->
+  <section class="settings-section">
+    <h3>Notifications</h3>
+    <label>
+      <input type="checkbox" [(ngModel)]="settings.notifyNewExpense" />
+      Notify when a new expense is added
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="settings.notifyLatePayments" />
+      Notify when someone misses a contribution
+    </label>
+  </section>
+
+  <!-- Danger Zone -->
+  <section class="danger-zone mb-2">
+    <h3>Danger Zone</h3>
+    <button class="delete-btn" (click)="onDeleteHouse()">Delete Household</button>
+  </section>
+
+  <!-- Save Button -->
+  <button class="save-btn" (click)="onSaveSettings()">Save Changes</button>
+</div>

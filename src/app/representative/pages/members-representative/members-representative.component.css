@@ -1,0 +1,87 @@
+.members-container {
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.members-table th {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  color: white;
+}
+
+.members-table td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.members-table th {
+  background-color: #42A5F5;
+}
+
+.view-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background-color: #388e3c;
+}
+
+.add-member-container {
+  text-align: right;
+}
+
+.add-btn {
+  background-color: #1565C0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #42A5F5;
+}
+
+.member-details {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: black;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid #1565C0;
+}
+
+.profile-info p {
+  margin: 0.3rem 0;
+}
