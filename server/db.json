@@ -26,5 +26,31 @@
       },
       "creationDateFormatted": "2024-11-10"
     }
+  ],
+  "members": [
+    {
+      "id": "m1",
+      "name": "Juan Pérez",
+      "homeId": "1",
+      "assignedGoal": 200.00,
+      "totalContributed": 150.00,
+      "deadline": "2025-06-15",
+      "status": "In Progress",
+      "contributionHistory": [
+        {
+          "date": "2025-05-01",
+          "amount": 50.00,
+          "comment": "Monthly payment",
+          "status": "Approved"
+        },
+        {
+          "date": "2025-04-01",
+          "amount": 100.00,
+          "comment": "Initial contribution",
+          "status": "Approved"
+        }
+      ]
+    }
   ]
+
 }
