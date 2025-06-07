@@ -25,6 +25,15 @@
         "amount": 50
       },
       "creationDateFormatted": "2024-11-10"
+    },
+    {
+      "id": "cdZPFTz",
+      "name": "Casa de trabajo",
+      "description": "trabajo",
+      "membersCount": 3,
+      "currency": "",
+      "creationDate": "2025-05-17T18:46:42.805Z",
+      "creationDateFormatted": "17/05/2025"
     }
   ]
 }

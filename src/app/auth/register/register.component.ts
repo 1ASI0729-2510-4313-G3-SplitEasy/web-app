@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import {NavBarComponent} from '../../core/component/nav-bar/nav-bar.component';
-import {TheFooterComponent} from '../../core/component/the-footer/the-footer.component';
+import { NavBarComponent } from '../../public/home/nav-bar/nav-bar.component';
+import { TheFooterComponent } from '../../public/home/the-footer/the-footer.component';
 
 @Component({
   selector: 'app-register',
