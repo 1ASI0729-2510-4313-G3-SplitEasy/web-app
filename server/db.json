@@ -2,55 +2,116 @@
   "homes": [
     {
       "id": "1",
-      "name": "Casa principal cambio",
-      "description": "Hogar familiar",
-      "membersCount": 3,
-      "currency": "USD",
-      "totalContributed": 1234.56,
-      "lastBill": {
-        "description": "Electricidad",
-        "amount": 150
-      },
-      "creationDateFormatted": "2025-05-16"
+      "name": "Casa alquiler 1",
+      "description": "Casa en Chorrillos",
+      "currency": "PEN",
+      "owner_id": "3",
+      "creationDate": "2025-05-16"
     },
     {
       "id": "2",
-      "name": "Casa principal2",
-      "description": "Hogar familiar2",
-      "membersCount": 3,
-      "currency": "PEN",
-      "totalContributed": 789,
-      "lastBill": {
-        "description": "Agua",
-        "amount": 50
-      },
-      "creationDateFormatted": "2024-11-10"
+      "name": "Casa alquiler 2",
+      "description": "Casa en Miraflores",
+      "currency": "USD",
+      "owner_id": "3",
+      "creationDate": "2025-05-16"
     }
   ],
-  "members": [
+  "users": [
     {
-      "id": "m1",
-      "name": "Juan Pérez",
-      "homeId": "1",
-      "assignedGoal": 200.00,
-      "totalContributed": 150.00,
-      "deadline": "2025-06-15",
-      "status": "In Progress",
-      "contributionHistory": [
-        {
-          "date": "2025-05-01",
-          "amount": 50.00,
-          "comment": "Monthly payment",
-          "status": "Approved"
-        },
-        {
-          "date": "2025-04-01",
-          "amount": 100.00,
-          "comment": "Initial contribution",
-          "status": "Approved"
-        }
-      ]
+      "id": "1",
+      "email": "member@example.com",
+      "password": "member123",
+      "role": "member",
+      "fisrtName": "Alexander Piero",
+      "lastName": "Fernandez Garfias",
+      "picture": "random2.png"
+    },
+    {
+      "id": "2",
+      "email": "member@example.com",
+      "password": "member123",
+      "role": "member",
+      "fisrtName": "Alexander1 Piero1",
+      "lastName": "Fernandez1 Garfias1",
+      "picture": "random2.png"
+    },
+    {
+      "id": "3",
+      "email": "representative@example.com",
+      "password": "rep123",
+      "role": "representative",
+      "fisrtName": "Alexander2 Piero2",
+      "lastName": "Fernandez2 Garfias2",
+      "picture": "random3.png"
+    }
+  ],
+  "contributions": [
+    {
+      "user_id": "1",
+      "descripcion": "billing water",
+      "amount": 30.3,
+      "owner_id": "3",
+      "currency": "USD",
+      "status": "APROVED",
+      "home_id": "1",
+      "dateDue": "",
+      "dateCreate": "",
+      "period_id": "1"
+    },
+    {
+      "user_id": "1",
+      "descripcion": "billing ligth",
+      "amount": 30.3,
+      "currency": "USD",
+      "status": "APROVED",
+      "home_id": "1",
+      "owner_id": "3",
+      "dateDue": "",
+      "dateCreate": "",
+      "period_id": "1"
+    },
+    {
+      "user_id": "2",
+      "descripcion": "billing water",
+      "amount": 30.3,
+      "currency": "USD",
+      "status": "APROVED",
+      "home_id": "2",
+      "owner_id": "3",
+      "dateDue": "",
+      "dateCreate": "",
+      "period_id": "2"
+    },
+    {
+      "user_id": "2",
+      "descripcion": "billing ligth",
+      "amount": 30.3,
+      "currency": "USD",
+      "status": "APROVED",
+      "home_id": "2",
+      "owner_id": "3",
+      "dateDue": "",
+      "dateCreate": "",
+      "period_id": "2"
+    }
+  ],
+  "periodsContributions": [
+    {
+      "dateDue": "2025-06-29",
+      "dateInit": "2025-06-01",
+      "name": "periodo Junio",
+      "owner_id": "3",
+      "house_id": "1",
+      "id": "1"
+    },
+    {
+      "dateDue": "2025-06-29",
+      "dateInit": "2025-06-01",
+      "name": "periodo Junio",
+      "owner_id": "3",
+      "house_id": "2",
+      "id": "2"
     }
   ]
-
 }

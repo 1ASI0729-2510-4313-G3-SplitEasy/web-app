@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {Router} from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings-member',
-  imports: [
-    FormsModule
-  ],
+  imports: [FormsModule],
   templateUrl: './settings-member.component.html',
-  styleUrl: './settings-member.component.css'
+  styleUrl: './settings-member.component.css',
 })
 export class SettingsMemberComponent {
   fullName = 'John Doe';

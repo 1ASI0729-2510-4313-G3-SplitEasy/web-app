@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {CurrencyPipe, NgIf} from '@angular/common';
+import { CurrencyPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home-member',
   templateUrl: './home-member.component.html',
-  imports: [
-    CurrencyPipe,
-    NgIf
-  ],
-  styleUrls: ['./home-member.component.css']
+  imports: [CurrencyPipe, NgIf],
+  styleUrl: './home-member.component.css',
 })
 export class HomeMemberComponent {
   memberName = 'Ana López';
@@ -18,7 +15,7 @@ export class HomeMemberComponent {
   joinDate = '2023-08-15';
   lastBill = {
     description: 'Electricity - March',
-    amount: 40.75
+    amount: 40.75,
   };
 
   constructor(private router: Router) {}

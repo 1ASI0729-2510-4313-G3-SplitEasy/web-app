@@ -1,45 +1,41 @@
 import { Component } from '@angular/core';
-import {CurrencyPipe, DatePipe, NgForOf} from '@angular/common';
-import {Router} from '@angular/router';
+import { CurrencyPipe, DatePipe, NgForOf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-status-member',
-  imports: [
-    CurrencyPipe,
-    DatePipe,
-    NgForOf
-  ],
+  imports: [CurrencyPipe, DatePipe, NgForOf],
   templateUrl: './status-member.component.html',
-  styleUrl: './status-member.component.css'
+  styleUrl: './status-member.component.css',
 })
 export class StatusMemberComponent {
-  totalContributed = 300.00;
-  monthlyGoal = 500.00;
-  compliance = 300.00;
+  totalContributed = 300.0;
+  monthlyGoal = 500.0;
+  compliance = 300.0;
   contributorCount = 3;
 
   memberStatusList = [
     {
       name: 'Alice Johnson',
-      amountContributed: 100.00,
-      assignedAmount: 150.00,
+      amountContributed: 100.0,
+      assignedAmount: 150.0,
       deadline: new Date('2025-06-15'),
-      status: 'On Track'
+      status: 'On Track',
     },
     {
       name: 'Bob Smith',
-      amountContributed: 100.00,
-      assignedAmount: 150.00,
+      amountContributed: 100.0,
+      assignedAmount: 150.0,
       deadline: new Date('2025-06-15'),
-      status: 'On Track'
+      status: 'On Track',
     },
     {
       name: 'You',
-      amountContributed: 100.00,
-      assignedAmount: 200.00,
+      amountContributed: 100.0,
+      assignedAmount: 200.0,
       deadline: new Date('2025-06-15'),
-      status: 'Pending'
-    }
+      status: 'Pending',
+    },
   ];
 
   constructor(private router: Router) {}

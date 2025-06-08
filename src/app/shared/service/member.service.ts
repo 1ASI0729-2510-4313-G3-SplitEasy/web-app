@@ -21,7 +21,7 @@ export interface MemberSummary {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemberService {
   private apiUrl = 'http://localhost:3000/members';

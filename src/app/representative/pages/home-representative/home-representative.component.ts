@@ -1,20 +1,14 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe, NgForOf } from '@angular/common';
-import { HomeManagementComponent } from './home-management/home-management.component';
 import { Home } from '../../model/home.entity';
 import { HomeService } from '../../service/home.service'; // Asegúrate que el path sea correcto
 
 @Component({
   selector: 'app-home-representative',
   templateUrl: './home-representative.component.html',
-  imports: [
-    FormsModule,
-    NgForOf,
-    CurrencyPipe,
-    HomeManagementComponent,
-  ],
-  styleUrls: ['./home-representative.component.css']
+  imports: [FormsModule, CurrencyPipe, NgForOf],
+  styleUrls: ['./home-representative.component.css'],
 })
 export class HomeRepresentativeComponent implements OnInit {
   households: Home[] = [];
@@ -26,7 +20,7 @@ export class HomeRepresentativeComponent implements OnInit {
   lastBill = { description: '', amount: 0 };
   creationDate: string = '';
 
-  private homeService: HomeService = inject(HomeService);
+  constructor(private homeService: HomeService) {}
 
   ngOnInit(): void {
     this.getAllHomes();
@@ -51,12 +45,15 @@ export class HomeRepresentativeComponent implements OnInit {
 
   updateHouseholdData() {
     const selectedHousehold = this.households.find(
-      h => h.id.toString() === this.selectedHouseholdId
+      (h) => h.id.toString() === this.selectedHouseholdId
     );
     if (selectedHousehold) {
       this.totalContributed = (selectedHousehold as any).totalContributed ?? 0;
       this.totalMembers = selectedHousehold.membersCount;
-      this.lastBill = (selectedHousehold as any).lastBill || { description: '', amount: 0 };
+      this.lastBill = (selectedHousehold as any).lastBill || {
+        description: '',
+        amount: 0,
+      };
       this.creationDate = selectedHousehold.creationDateFormatted;
     }
   }

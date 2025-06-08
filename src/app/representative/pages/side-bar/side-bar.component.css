@@ -5,7 +5,7 @@
 
 .sidebar {
   width: 250px;
-  background-color: #1565C0;
+  background-color: #051e39;
   color: white;
   padding: 20px 0;
   /* Elimina esto si lo tienes: */
@@ -75,6 +75,5 @@
 .nav-links a.active,
 .nav-links a:hover {
   color: white;
-  background-color: #42A5F5;
+  background-color: #42a5f5;
 }
-
