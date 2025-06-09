@@ -13,7 +13,7 @@
     </tr>
     <tr>
       <th>Deadline:</th>
-      <td>{{ deadline | date: 'MMM d, y' }}</td>
+      <td>{{ deadline | date : "MMM d, y" }}</td>
     </tr>
     <tr>
       <th>Status:</th>
@@ -21,28 +21,62 @@
     </tr>
   </table>
 
-  <div class="button-container">
-    <button (click)="addContribution()" class="contribution-btn">New Contribution</button>
+  <div class="button-container mb-3">
+    <button (click)="addContribution()" class="contribution-btn">
+      New Contribution
+    </button>
+  </div>
+
+  <div *ngIf="activateForm" class="mb-3 card card-dark p-3">
+    <form
+      (ngSubmit)="createNewContribution()"
+      [formGroup]="formNewContribution"
+    >
+      <div class="mb-3">
+        <label for="comment" class="form-label">comment</label>
+        <input type="text" class="form-control" formControlName="comment" />
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">amount</label>
+        <input type="number" class="form-control" formControlName="amount" />
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">date</label>
+        <input type="date" class="form-control" formControlName="date" />
+      </div>
+      <div class="d-flex gap-3">
+        <button type="submit" class="btn" style="background-color: green">
+          create
+        </button>
+        <button
+          class="btn"
+          style="background-color: red"
+          (click)="addContribution()"
+        >
+          cancel
+        </button>
+      </div>
+    </form>
   </div>
 
   <!-- Contribution History Table -->
   <h3>Contribution History</h3>
   <table class="history-table">
     <thead>
-    <tr>
-      <th>Date</th>
-      <th>Amount</th>
-      <th>Comment</th>
-      <th>Status</th>
-    </tr>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Comment</th>
+        <th>Status</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let c of contributionHistory">
-      <td>{{ c.date | date: 'shortDate' }}</td>
-      <td>{{ c.amount | currency }}</td>
-      <td>{{ c.comment }}</td>
-      <td>{{ c.status }}</td>
-    </tr>
+      <tr *ngFor="let c of contributionHistory">
+        <td>{{ c.date | date : "shortDate" }}</td>
+        <td>{{ c.amount | currency }}</td>
+        <td>{{ c.comment }}</td>
+        <td>{{ c.status }}</td>
+      </tr>
     </tbody>
   </table>
 </div>

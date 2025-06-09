@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 
 export interface MemberContribution {
   date: Date;
@@ -21,7 +21,7 @@ export interface MemberSummary {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemberService {
   private apiUrl = 'http://localhost:3000/members';
@@ -30,5 +30,19 @@ export class MemberService {
 
   getMemberSummary(memberId: string): Observable<MemberSummary> {
     return this.http.get<MemberSummary>(`${this.apiUrl}/${memberId}`);
+  }
+
+  addContribution(memberId: string, newContribution: any): Observable<any[]> {
+    return this.http.get<any>(`${this.apiUrl}/${memberId}`).pipe(
+      switchMap((member) => {
+        const updatedHistory = [...member.contributionHistory, newContribution];
+
+        return this.http
+          .patch<any>(`${this.apiUrl}/${memberId}`, {
+            contributionHistory: updatedHistory,
+          })
+          .pipe(map((updated) => updated.contributionHistory));
+      })
+    );
   }
 }
