@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavBarComponent} from '../../core/component/nav-bar/nav-bar.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HeroSectionComponent} from './hero-section/hero-section.component';
 import {AboutSectionComponent} from './about-section/about-section.component';
 import {ServiceSectionComponent} from './service-section/service-section.component';
@@ -7,7 +7,7 @@ import {HowdoesitworkSectionComponent} from './howdoesitwork-section/howdoesitwo
 import {PriceSectionComponent} from './price-section/price-section.component';
 import {ReviewSectionComponent} from './review-section/review-section.component';
 import {ContactusSectionComponent} from './contactus-section/contactus-section.component';
-import {TheFooterComponent} from '../../core/component/the-footer/the-footer.component';
+import { TheFooterComponent } from './the-footer/the-footer.component';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

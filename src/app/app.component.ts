@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {NavBarComponent} from './core/component/nav-bar/nav-bar.component';
-import {TheFooterComponent} from './core/component/the-footer/the-footer.component';
+import { NavBarComponent } from './public/home/nav-bar/nav-bar.component';
+import { TheFooterComponent } from './public/home/the-footer/the-footer.component';
 import {ActivatedRoute, NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {filter} from 'rxjs';
 
