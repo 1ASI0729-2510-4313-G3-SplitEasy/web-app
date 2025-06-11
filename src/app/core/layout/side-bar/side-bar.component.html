@@ -1,0 +1,99 @@
+<div class="layout">
+  <nav class="sidebar p-3">
+    <section class="header-section">
+      <div class="logo">
+        <img src="/images/logo.png" alt="SplitEasy Logo" />
+        <h2>SplitEasy</h2>
+      </div>
+    </section>
+
+    <section class="nav-section">
+      <div class="profile-nav-container">
+        <div class="profile-section">
+          <img
+            *ngIf="user.picture"
+            src="/images/{{ user.picture }}"
+            alt="User"
+            class="profile-img"
+          />
+          <p class="profile-name">{{ user.firstName }} {{ user.lastName }}</p>
+        </div>
+
+        <ul class="nav-links" *ngIf="user.role == roles.MEMBER">
+          <li>
+            <a routerLink="/member/home" routerLinkActive="active">Home</a>
+          </li>
+          <li>
+            <a routerLink="/member/contributions" routerLinkActive="active"
+              >Contributions</a
+            >
+          </li>
+          <li>
+            <a routerLink="/member/status" routerLinkActive="active">Status</a>
+          </li>
+          <li>
+            <a routerLink="/member/settings" routerLinkActive="active"
+              >Settings</a
+            >
+          </li>
+        </ul>
+
+        <ul class="nav-links" *ngIf="user.role == roles.REPRESENTATIVE">
+          <li>
+            <div class="mb-3">
+              <label for="selectHouse" class="form-label text-light"
+                >Select a house</label
+              >
+              <select
+                name="selectHouse"
+                [(ngModel)]="selectHouse"
+                class="form-select"
+                (change)="changeSelectHouse($event)"
+              >
+                <option>--select house--</option>
+                <option *ngFor="let house of houseList" value="{{ house.id }}">
+                  {{ house.name }}
+                </option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <a routerLink="/representative/home" routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a routerLink="/representative/members" routerLinkActive="active"
+              >Members</a
+            >
+          </li>
+          <li>
+            <a routerLink="/representative/bills" routerLinkActive="active"
+              >Bills</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/representative/contributions"
+              routerLinkActive="active"
+              >Contributions</a
+            >
+          </li>
+          <li>
+            <a routerLink="/representative/settings" routerLinkActive="active"
+              >Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="logout-container">
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </section>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

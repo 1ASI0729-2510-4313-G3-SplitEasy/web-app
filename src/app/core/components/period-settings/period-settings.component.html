@@ -1,0 +1,93 @@
+<div class="container-form">
+  <div class="card p-4 w-100">
+    <legend>List the periods</legend>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Date Init</th>
+            <th>Date Due</th>
+            <th>House</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let period of periodsList">
+            <td>{{ period.name }}</td>
+            <td>{{ period.dateInit }}</td>
+            <td>{{ period.dateDue }}</td>
+            <td>{{ period.house_name }}</td>
+            <td>
+              <div class="d-flex" style="column-gap: 10px">
+                <span class="btn btn-primary w-100" (click)="editTable(period)"
+                  >Edit</span
+                >
+                <span
+                  class="btn btn-danger w-100"
+                  (click)="deletePeriod(period.id)"
+                  >Delete</span
+                >
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card p-4">
+    <legend>{{ activateFormEdit ? "Edit" : "Create" }} period</legend>
+    <!-- Formulario aquí -->
+    <form
+      *ngIf="activateForm"
+      [formGroup]="periodForm"
+      class="row row-cols-1 g-3"
+    >
+      <div>
+        <label for="name" class="form-label">name</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label for="dateInit" class="form-label">Date Init</label>
+          <input type="date" formControlName="dateInit" class="form-control" />
+        </div>
+        <div class="col-6">
+          <label for="dateDue" class="form-label">Date Due</label>
+          <input type="date" formControlName="dateDue" class="form-control" />
+        </div>
+      </div>
+
+      <div>
+        <label for="house_id" class="form-label">House</label>
+        <select class="form-control" formControlName="house_id">
+          <option>--selection House---</option>
+          <option *ngFor="let house of houseList" value="{{ house.id }}">
+            {{ house.name }}
+          </option>
+        </select>
+      </div>
+    </form>
+    <span
+      *ngIf="!activateForm"
+      class="btn btn-success w-100 mt-3"
+      (click)="initform()"
+      >Create</span
+    >
+    <div class="d-flex" style="column-gap: 16px">
+      <span
+        *ngIf="activateForm"
+        class="btn btn-danger w-100 mt-3"
+        (click)="initform()"
+        >cancel</span
+      >
+      <span
+        *ngIf="activateForm"
+        class="btn btn-success w-100 mt-3"
+        (click)="savePeriod()"
+        >save</span
+      >
+    </div>
+  </div>
+</div>

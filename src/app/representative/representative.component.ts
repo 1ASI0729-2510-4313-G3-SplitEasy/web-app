@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { SideBarMemberComponent } from '../core/layout/side-bar/side-bar.component';
 
 @Component({
   selector: 'app-representative',
-  imports: [],
+  imports: [SideBarMemberComponent],
   templateUrl: './representative.component.html',
-  styleUrl: './representative.component.css'
+  styleUrl: './representative.component.css',
 })
-export class RepresentativeComponent {
-
-}
+export class RepresentativeComponent {}

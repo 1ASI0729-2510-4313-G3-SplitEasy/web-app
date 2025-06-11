@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideBarMemberComponent } from './side-bar/side-bar.component';
+import { SideBarMemberComponent } from '../core/layout/side-bar/side-bar.component';
 
 @Component({
   selector: 'app-member',

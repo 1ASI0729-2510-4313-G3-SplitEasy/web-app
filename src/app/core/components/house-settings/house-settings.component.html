@@ -1,0 +1,83 @@
+<div class="container-form">
+  <div class="card p-4 w-100">
+    <legend>List the houses</legend>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Currency</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let house of housesList">
+            <td>{{ house.name }}</td>
+            <td>{{ house.description }}</td>
+            <td>{{ house.currency }}</td>
+            <td>
+              <div class="d-flex" style="column-gap: 10px">
+                <span class="btn btn-primary w-100" (click)="editTable(house)"
+                  >Edit</span
+                >
+                <span
+                  class="btn btn-danger w-100"
+                  (click)="deleteHouse(house.id)"
+                  >Delete</span
+                >
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card p-4">
+    <legend>{{ activateFormEdit ? "Edit" : "Create" }} house</legend>
+    <!-- Formulario aquí -->
+    <form
+      *ngIf="activateForm"
+      [formGroup]="houseForm"
+      class="row row-cols-1 g-3"
+    >
+      <div>
+        <label for="name" class="form-label">name</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+      <div>
+        <label for="description" class="form-label">description</label>
+        <textarea formControlName="description" class="form-control"></textarea>
+      </div>
+      <div>
+        <label for="currency" class="form-label">currency</label>
+        <select class="form-control" formControlName="currency">
+          <option>--selection currency---</option>
+          <option value="PEN">PEN</option>
+          <option value="USD">USD</option>
+        </select>
+      </div>
+    </form>
+    <span
+      *ngIf="!activateForm"
+      class="btn btn-success w-100 mt-3"
+      (click)="initform()"
+      >Create</span
+    >
+    <div class="d-flex" style="column-gap: 16px">
+      <span
+        *ngIf="activateForm"
+        class="btn btn-danger w-100 mt-3"
+        (click)="initform()"
+        >cancel</span
+      >
+      <span
+        *ngIf="activateForm"
+        class="btn btn-success w-100 mt-3"
+        (click)="saveHouse()"
+        >save</span
+      >
+    </div>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 {
-  "homes": [
+  "houses": [
     {
       "id": "1",
-      "name": "Casa alquiler 1",
+      "name": "Casa alquiler chorr",
       "description": "Casa en Chorrillos",
       "currency": "PEN",
       "owner_id": "3",
@@ -22,33 +22,36 @@
       "id": "1",
       "email": "member@example.com",
       "password": "member123",
+      "house_id": "1",
       "role": "member",
-      "fisrtName": "Alexander Piero",
+      "firstName": "Alexander Piero",
       "lastName": "Fernandez Garfias",
       "picture": "random2.png"
     },
     {
       "id": "2",
       "email": "member@example.com",
+      "house_id": "1",
       "password": "member123",
       "role": "member",
-      "fisrtName": "Alexander1 Piero1",
+      "firstName": "Alexander1 Piero1",
       "lastName": "Fernandez1 Garfias1",
       "picture": "random2.png"
     },
     {
       "id": "3",
-      "email": "representative@example.com",
-      "password": "rep123",
+      "email": "representative1@example.com",
+      "password": "repre147852",
       "role": "representative",
-      "fisrtName": "Alexander2 Piero2",
-      "lastName": "Fernandez2 Garfias2",
+      "firstName": "Alexander32 Piero28",
+      "lastName": "Fernandez7 Garfias28",
       "picture": "random3.png"
     },
     {
       "id": "628a",
       "email": "maxlazsb@gmail.com",
-      "fisrtName": "DAVID JESUS",
+      "house_id": "2",
+      "firstName": "DAVID JESUS",
       "lastName": "LAZARO TORRES",
       "password": "147852",
       "repeatPassword": "123456",
@@ -63,22 +66,26 @@
       "owner_id": "3",
       "currency": "USD",
       "status": "APROVED",
-      "home_id": "1",
+      "house_id": "1",
       "dateDue": "",
       "dateCreate": "",
-      "period_id": "1"
+      "period_id": "1",
+      "id": "2a9b",
+      "is_billing": true
     },
     {
       "user_id": "1",
-      "descripcion": "billing ligth",
+      "descripcion": "remodelacion",
       "amount": 30.3,
       "currency": "USD",
       "status": "APROVED",
-      "home_id": "1",
+      "house_id": "1",
       "owner_id": "3",
       "dateDue": "",
       "dateCreate": "",
-      "period_id": "1"
+      "period_id": "1",
+      "id": "3337",
+      "is_billing": false
     },
     {
       "user_id": "2",
@@ -86,11 +93,13 @@
       "amount": 30.3,
       "currency": "USD",
       "status": "APROVED",
-      "home_id": "2",
+      "house_id": "2",
       "owner_id": "3",
       "dateDue": "",
       "dateCreate": "",
-      "period_id": "2"
+      "period_id": "2",
+      "id": "3941",
+      "is_billing": false
     },
     {
       "user_id": "2",
@@ -98,11 +107,12 @@
       "amount": 30.3,
       "currency": "USD",
       "status": "APROVED",
-      "home_id": "2",
+      "house_id": "2",
       "owner_id": "3",
       "dateDue": "",
       "dateCreate": "",
-      "period_id": "2"
+      "period_id": "2",
+      "id": "742f"
     }
   ],
   "periodsContributions": [

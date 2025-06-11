@@ -240,3 +240,7 @@ body {
 
 @media (min-width: 1400px) {
 }
+.container-form {
+  display: flex;
+  column-gap: 16px;
+}

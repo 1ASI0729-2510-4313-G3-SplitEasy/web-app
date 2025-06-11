@@ -1,0 +1,157 @@
+<div class="container p-0">
+  <h1 class="text-white mb-3">Member</h1>
+  <section>
+    <div class="row" style="column-gap: 16px">
+      <div class="card p-4 col-7">
+        <legend>List the members</legend>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let member of membersList">
+                <td>{{ member.firstName }}</td>
+                <td>{{ member.lastName }}</td>
+                <td>{{ member.email }}</td>
+                <td>{{ member.password }}</td>
+                <td>
+                  <div class="d-flex" style="column-gap: 10px">
+                    <span
+                      class="btn btn-primary w-100"
+                      (click)="editTable(member)"
+                      >Edit</span
+                    >
+                    <span
+                      class="btn btn-danger w-100"
+                      (click)="deleteMember(member.id)"
+                      >Delete</span
+                    >
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card p-4 col-4">
+        <legend>{{ activateFormEdit ? "Edit" : "Create" }} member</legend>
+        <!-- Formulario edit -->
+        <form
+          *ngIf="activateFormEdit"
+          class="row row-cols-1 g-3"
+          [formGroup]="memberEditForm"
+        >
+          <div>
+            <div>
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+              />
+            </div>
+            <div class="ml-2">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="ejemplo@correo.com"
+            />
+          </div>
+        </form>
+
+        <!-- Formulario register -->
+        <form
+          *ngIf="activateForm"
+          class="row row-cols-2 g-3"
+          [formGroup]="memberRegisterForm"
+        >
+          <div>
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+            />
+          </div>
+          <div>
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="ejemplo@correo.com"
+            />
+          </div>
+          <div>
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="********"
+            />
+          </div>
+          <div>
+            <label for="repeat-password" class="form-label"
+              >Repeat Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              formControlName="repeatPassword"
+              placeholder="********"
+            />
+          </div>
+        </form>
+        <span
+          *ngIf="!activateForm && !activateFormEdit"
+          class="btn btn-success w-100 mt-3"
+          (click)="activeForm()"
+          >Create</span
+        >
+        <div class="d-flex" style="column-gap: 16px">
+          <span
+            *ngIf="activateForm || activateFormEdit"
+            class="btn btn-danger w-100 mt-3"
+            (click)="initform()"
+            >cancel</span
+          >
+          <span
+            *ngIf="activateForm || activateFormEdit"
+            class="btn btn-success w-100 mt-3"
+            (click)="saveMember()"
+            >save</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

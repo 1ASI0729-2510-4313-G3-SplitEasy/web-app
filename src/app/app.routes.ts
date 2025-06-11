@@ -53,6 +53,10 @@ export const routes: Routes = [
       import('./representative/representative.component').then(
         (m) => m.RepresentativeComponent
       ),
+    loadChildren: () =>
+      import('./representative/representative.routes').then(
+        (m) => m.representativeRoutes
+      ),
   },
   {
     path: '**',

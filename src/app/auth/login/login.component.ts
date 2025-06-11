@@ -11,6 +11,7 @@ import { TheFooterComponent } from '../../core/layout/the-footer/the-footer.comp
 import { Roles } from '../../core/models/enums/roles.enum';
 import { User } from '../../core/models/interfaces/auth.interface';
 import { AuthService } from '../../core/services/auth/auth.service';
+import { HousesService } from '../../core/services/houses/houses.service';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,8 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _houseService: HousesService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -47,7 +49,13 @@ export class LoginComponent {
             alert('Login successful!');
             localStorage.setItem('currentUser', JSON.stringify(user));
             if (user.role === Roles.REPRESENTATIVE) {
-              this.router.navigate(['/representative/home']);
+              this._houseService.getAllByRepre(user.id).subscribe({
+                next: (houseList) => {
+                  localStorage.setItem('currentHouse', houseList[0].id);
+                  this.router.navigate(['/representative/home']);
+                },
+                error: (err) => {},
+              });
             } else {
               this.router.navigate(['/member/home']);
             }

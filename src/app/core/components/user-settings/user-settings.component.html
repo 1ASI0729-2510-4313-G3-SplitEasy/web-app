@@ -1,0 +1,93 @@
+<div class="container-form">
+  <div class="card p-4">
+    <legend>User Data</legend>
+    <form
+      [formGroup]="userForm"
+      (ngSubmit)="saveUser()"
+      class="row row-cols-2 g-3"
+    >
+      <div>
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" />
+      </div>
+      <div>
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" />
+      </div>
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="ejemplo@correo.com"
+        />
+      </div>
+      <div>
+        <label for="role" class="form-label">Role</label>
+        <select class="form-control" formControlName="role">
+          <option>--selection role---</option>
+          <option value="member">Member</option>
+          <option value="representative">Representative</option>
+        </select>
+      </div>
+      <div *ngIf="!activateEditUser">
+        <span class="btn btn-primary w-100" (click)="editUser()">edit</span>
+      </div>
+      <div *ngIf="activateEditUser">
+        <span class="btn btn-danger w-100" (click)="cancelUser()">
+          cancel
+        </span>
+      </div>
+      <div *ngIf="activateEditUser">
+        <button type="submit" class="btn btn-success w-100">save</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card p-4">
+    <legend>Change password</legend>
+    <form
+      [formGroup]="userPasswordForm"
+      (ngSubmit)="savePasswordUser()"
+      class="row row-cols-1 g-3"
+      *ngIf="activateEditUserPassword"
+    >
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="********"
+        />
+      </div>
+      <div>
+        <label for="repeat-password" class="form-label">Repeat Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="repeatPassword"
+          placeholder="********"
+        />
+      </div>
+    </form>
+    <div class="row row-cols-2 g-3 mt-2">
+      <div *ngIf="!activateEditUserPassword">
+        <button class="btn btn-primary w-100" (click)="editPasswordUser()">
+          edit
+        </button>
+      </div>
+      <div *ngIf="activateEditUserPassword">
+        <button class="btn btn-danger w-100" (click)="cancelPasswordUser()">
+          cancel
+        </button>
+      </div>
+      <div *ngIf="activateEditUserPassword">
+        <button (click)="savePasswordUser()" class="btn btn-success w-100">
+          save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

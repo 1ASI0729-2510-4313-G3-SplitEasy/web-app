@@ -1,0 +1,20 @@
+.card-amount {
+  max-width: 180px;
+  height: 160px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.card-amount h1 {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.card-amount span {
+  color: #5c5c5c;
+  font-weight: 600;
+}
