@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import {CurrencyPipe, DatePipe, NgForOf} from '@angular/common';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CurrencyPipe, DatePipe, NgForOf } from '@angular/common';
+import { Router } from '@angular/router';
+import { MemberService, MemberContribution, MemberSummary } from '../../../shared/service/member.service'
 
 @Component({
   selector: 'app-contributions-member',
+  standalone: true,
   imports: [
     CurrencyPipe,
     DatePipe,
@@ -12,18 +14,35 @@ import {Router} from '@angular/router';
   templateUrl: './contributions-member.component.html',
   styleUrl: './contributions-member.component.css'
 })
-export class ContributionsMemberComponent {
-  totalContributed = 150.00;
-  assignedGoal = 200.00;
-  deadline = new Date('2025-06-15');
-  status = 'In Progress';
+export class ContributionsMemberComponent implements OnInit {
+  totalContributed = 0;
+  assignedGoal = 0;
+  deadline = new Date();
+  status = '';
+  contributionHistory: MemberContribution[] = [];
 
-  contributionHistory = [
-    { date: new Date('2025-05-01'), amount: 50.00, comment: 'Monthly payment', status: 'Approved' },
-    { date: new Date('2025-04-01'), amount: 100.00, comment: 'Initial contribution', status: 'Approved' }
-  ];
+  memberId = 'm1';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private memberService: MemberService
+  ) {}
+
+  ngOnInit(): void {
+    this.memberService.getMemberSummary(this.memberId).subscribe({
+      next: (member: MemberSummary) => {
+        this.totalContributed = member.totalContributed;
+        this.assignedGoal = member.assignedGoal;
+        this.deadline = new Date(member.deadline);
+        this.status = member.status;
+        this.contributionHistory = member.contributionHistory.map(c => ({
+          ...c,
+          date: new Date(c.date)
+        }));
+      },
+      error: err => console.error('Error fetching member data', err)
+    });
+  }
 
   addContribution() {
     this.router.navigate(['/member/contributions/new']);
