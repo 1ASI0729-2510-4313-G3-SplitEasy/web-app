@@ -23,6 +23,13 @@ export const representativeRoutes: Routes = [
       ),
   },
   {
+    path: 'bills',
+    loadComponent: () =>
+      import('./repre-billing/repre-billing.component').then(
+        (m) => m.RepreBillingComponent
+      ),
+  },
+  {
     path: 'settings',
     loadComponent: () =>
       import('./repre-settings/repre-settings.component').then(

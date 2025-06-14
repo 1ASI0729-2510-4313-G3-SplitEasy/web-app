@@ -26,7 +26,8 @@
       "role": "member",
       "firstName": "Alexander Piero",
       "lastName": "Fernandez Garfias",
-      "picture": "random2.png"
+      "picture": "random2.png",
+      "salary": 1500
     },
     {
       "id": "2",
@@ -36,16 +37,18 @@
       "role": "member",
       "firstName": "Alexander1 Piero1",
       "lastName": "Fernandez1 Garfias1",
-      "picture": "random2.png"
+      "picture": "random2.png",
+      "salary": 3000
     },
     {
       "id": "3",
-      "email": "representative1@example.com",
-      "password": "repre147852",
+      "email": "representative@example.com",
+      "password": "123456",
       "role": "representative",
       "firstName": "Alexander32 Piero28",
       "lastName": "Fernandez7 Garfias28",
-      "picture": "random3.png"
+      "picture": "random3.png",
+      "salary": 3000
     },
     {
       "id": "628a",
@@ -55,24 +58,11 @@
       "lastName": "LAZARO TORRES",
       "password": "147852",
       "repeatPassword": "123456",
-      "role": "member"
+      "role": "member",
+      "salary": 0
     }
   ],
   "contributions": [
-    {
-      "user_id": "1",
-      "descripcion": "billing water",
-      "amount": 30.3,
-      "owner_id": "3",
-      "currency": "USD",
-      "status": "APROVED",
-      "house_id": "1",
-      "dateDue": "",
-      "dateCreate": "",
-      "period_id": "1",
-      "id": "2a9b",
-      "is_billing": true
-    },
     {
       "user_id": "1",
       "descripcion": "remodelacion",
@@ -113,6 +103,45 @@
       "dateCreate": "",
       "period_id": "2",
       "id": "742f"
+    },
+    {
+      "id": "a26f",
+      "user_id": "3",
+      "descripcion": "billin water",
+      "amount": 120,
+      "owner_id": "3",
+      "currency": "PEN",
+      "status": "pending",
+      "house_id": "1",
+      "dateCreate": "2025-06-14T18:14:54.150Z",
+      "period_id": "1",
+      "is_billing": true
+    },
+    {
+      "id": "84e6",
+      "user_id": "2",
+      "descripcion": "billin water",
+      "amount": 120,
+      "owner_id": "3",
+      "currency": "PEN",
+      "status": "pending",
+      "house_id": "1",
+      "dateCreate": "2025-06-14T18:14:54.151Z",
+      "period_id": "1",
+      "is_billing": true
+    },
+    {
+      "id": "4e8a",
+      "user_id": "1",
+      "descripcion": "billin water",
+      "amount": 60,
+      "owner_id": "3",
+      "currency": "PEN",
+      "status": "pending",
+      "house_id": "1",
+      "dateCreate": "2025-06-14T18:14:54.151Z",
+      "period_id": "1",
+      "is_billing": true
     }
   ],
   "periodsContributions": [

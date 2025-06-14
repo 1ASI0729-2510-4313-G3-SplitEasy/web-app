@@ -3,7 +3,7 @@
     class="border-bottom"
     style="display: flex; justify-content: space-between"
   >
-    <h1 class="text-white mb-3">Contributions</h1>
+    <h1 class="text-white mb-3">Billis</h1>
     <div>
       <label for="selectPeriod" class="text-white">Select Period</label>
       <select
@@ -35,9 +35,64 @@
         <span>Total</span>
       </div>
     </div>
+    <div class="container">
+      <div class="card p-4">
+        <legend>Generate Billis all member</legend>
+        <!-- Formulario aquí -->
+        <form [formGroup]="BillisForm" class="row row-cols-2 g-3">
+          <div>
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input
+              type="text"
+              formControlName="descripcion"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="amount" class="form-label">Amount</label>
+            <input
+              type="number"
+              formControlName="amount"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="currency" class="form-label">currency</label>
+            <select class="form-control" formControlName="currency">
+              <option>--selection currency---</option>
+              <option value="PEN">PEN</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
+          <div>
+            <label for="status" class="form-label">status</label>
+            <select class="form-control" formControlName="status">
+              <option value="{{ statusEnum.PENDING }}">
+                {{ statusEnum.PENDING }}
+              </option>
+              <option value="{{ statusEnum.APPROVED }}">
+                {{ statusEnum.APPROVED }}
+              </option>
+              <option value="{{ statusEnum.REJECTED }}">
+                {{ statusEnum.REJECTED }}
+              </option>
+              <option value="{{ statusEnum.CANCELLED }}">
+                {{ statusEnum.CANCELLED }}
+              </option>
+              <option value="{{ statusEnum.EXPIRED }}">
+                {{ statusEnum.EXPIRED }}
+              </option>
+            </select>
+          </div>
+        </form>
+        <span class="btn btn-success w-100 mt-3" (click)="generateBillis()"
+          >Generate</span
+        >
+      </div>
+    </div>
     <div class="container-form mt-3">
       <div class="card p-4 w-100">
-        <legend>List the contributions by Casa chorrillos</legend>
+        <legend>List the Billis by Casa chorrillos</legend>
         <div class="table-responsive">
           <table class="table table-bordered table-striped">
             <thead class="table-dark">

@@ -16,23 +16,24 @@ import { StatusContribution } from '../../core/models/enums/contribution.enum';
 import { UserService } from '../../core/services/user/user.service';
 
 @Component({
-  selector: 'app-repre-contributions',
+  selector: 'app-repre-billing',
   imports: [NgFor, FormsModule, NgIf, ReactiveFormsModule],
-  templateUrl: './repre-contributions.component.html',
-  styleUrl: './repre-contributions.component.css',
+  templateUrl: './repre-billing.component.html',
+  styleUrl: './repre-billing.component.css',
 })
-export class RepreContributionsComponent implements OnInit {
+export class RepreBillingComponent implements OnInit {
   private user_id: string;
-  private represent!: User;
   private house_id: string;
   public periodList!: Period[];
   public period_id!: string;
   public contributionsList!: Contribution[];
   public memberList!: User[];
   public contributionForm!: FormGroup;
+  public BillisForm!: FormGroup;
   public activateForm!: boolean;
   public activateFormEdit!: boolean;
   public statusEnum = StatusContribution;
+  private represent!: User;
 
   constructor(
     private _periodServices: PeriodsService,
@@ -62,6 +63,13 @@ export class RepreContributionsComponent implements OnInit {
             })[0].id || '0';
         },
       });
+    this.BillisForm = this.fb.group({
+      descripcion: ['', Validators.required],
+      amount: [0, Validators.required],
+      currency: ['', Validators.required],
+      status: [StatusContribution.PENDING, Validators.required],
+      is_billing: [true],
+    });
     this.initFormclean();
     this.loadData();
   }
@@ -74,7 +82,7 @@ export class RepreContributionsComponent implements OnInit {
       currency: ['', Validators.required],
       status: [StatusContribution.PENDING, Validators.required],
       id: [''],
-      is_billing: [false],
+      is_billing: [true],
     });
   }
 
@@ -83,7 +91,7 @@ export class RepreContributionsComponent implements OnInit {
   }
 
   private loadData() {
-    this._contributionService.getAllByHouseNotBilling(this.house_id).subscribe({
+    this._contributionService.getAllByHouseIsBilling(this.house_id).subscribe({
       next: (res) => {
         this.contributionsList = res;
         this._memberService.getAllByHouse(this.house_id).subscribe({
@@ -91,7 +99,7 @@ export class RepreContributionsComponent implements OnInit {
             this.memberList = [this.represent, ...res];
             this.contributionsList = this.contributionsList.map((c) => {
               const member: User =
-                this.memberList.find((x) => x.id == c.user_id) || ({} as User);
+                this.memberList.find((m) => m.id == c.user_id) || ({} as User);
               return {
                 memberName: member.firstName + ' ' + member.lastName,
                 ...c,
@@ -189,5 +197,58 @@ export class RepreContributionsComponent implements OnInit {
         alert('error delete Contribution ');
       },
     });
+  }
+
+  public generateBillis() {
+    const valueBillis = this.BillisForm.value;
+    if (this.BillisForm.valid) {
+      this.prorratearBillis(
+        valueBillis.amount,
+        valueBillis.descripcion,
+        valueBillis.currency
+      );
+    } else {
+      alert('campos incorrectos');
+    }
+  }
+
+  private prorratearBillis(
+    amountTotal: number,
+    descripcion: string,
+    currency: 'USD' | 'PEN'
+  ) {
+    const members = this.memberList;
+    const totalSalarys = members.reduce((sum, m) => sum + m.salary, 0);
+    members.forEach((m) => {
+      const porcent = m.salary / totalSalarys;
+      const amount: number = parseFloat((amountTotal * porcent).toFixed(2));
+      this._contributionService
+        .create(
+          this.user_id,
+          descripcion,
+          amount,
+          m.id,
+          currency,
+          this.house_id,
+          this.period_id,
+          true
+        )
+        .subscribe({
+          next: (res) => {
+            this.BillisForm = this.fb.group({
+              descripcion: ['', Validators.required],
+              amount: [0, Validators.required],
+              currency: ['', Validators.required],
+              status: [StatusContribution.PENDING, Validators.required],
+              is_billing: [true],
+            });
+          },
+          error: (err) => {
+            alert('error create Contribution');
+          },
+        });
+    });
+
+    this.loadData();
   }
 }

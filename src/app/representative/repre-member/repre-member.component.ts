@@ -47,6 +47,7 @@ export class RepreMemberComponent {
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      salary: [0, [Validators.required, Validators.min(0)]],
     });
     this.memberRegisterForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -54,6 +55,7 @@ export class RepreMemberComponent {
       lastName: ['', [Validators.required]],
       password: ['', [Validators.required]],
       repeatPassword: ['', [Validators.required]],
+      salary: [0, [Validators.required, Validators.min(0)]],
       role: ['member', [Validators.required]],
     });
   }
@@ -85,6 +87,7 @@ export class RepreMemberComponent {
       id: [member.id],
       firstName: [member.firstName, [Validators.required]],
       lastName: [member.lastName, [Validators.required]],
+      salary: [member.salary, [Validators.required, Validators.min(0)]],
       email: [member.email, [Validators.required, Validators.email]],
     });
     this.activateFormEdit = true;
@@ -99,7 +102,8 @@ export class RepreMemberComponent {
           valueForm.email,
           Roles.MEMBER,
           valueForm.firstName,
-          valueForm.lastName
+          valueForm.lastName,
+          valueForm.salary
         )
         .subscribe({
           next: (res) => {

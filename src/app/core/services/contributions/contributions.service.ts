@@ -3,6 +3,7 @@ import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Contribution } from '../../models/interfaces/contribution.interface';
+import { StatusContribution } from '../../models/enums/contribution.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,12 @@ export class ContributionsService {
   getAllByHouse(house_id: string): Observable<Contribution[]> {
     return this.getAll('house_id=' + house_id);
   }
+  getAllByHouseNotBilling(house_id: string): Observable<Contribution[]> {
+    return this.getAll('house_id=' + house_id + '&is_billing=false');
+  }
+  getAllByHouseIsBilling(house_id: string): Observable<Contribution[]> {
+    return this.getAll('house_id=' + house_id + '&is_billing=true');
+  }
 
   getAllByPeriod(period_id: string): Observable<Contribution[]> {
     return this.getAll(this.url + 'period_id=' + period_id);
@@ -33,7 +40,7 @@ export class ContributionsService {
   create(
     owner_id: string,
     descripcion: string,
-    amount: string,
+    amount: number,
     user_id: string,
     currency: string,
     house_id: string,
@@ -46,7 +53,7 @@ export class ContributionsService {
       amount: amount,
       owner_id: owner_id,
       currency: currency,
-      status: status,
+      status: StatusContribution.PENDING,
       house_id: house_id,
       dateCreate: new Date(),
       period_id: period_id,
@@ -58,10 +65,11 @@ export class ContributionsService {
     id: string,
     user_id: string,
     descripcion: string,
-    amount: string,
+    amount: number,
     currency: string,
     house_id: string,
     period_id: string,
+    status: StatusContribution,
     is_billing: boolean
   ): Observable<Contribution> {
     return this.http.patch<Contribution>(this.url + '/' + id, {

@@ -4,7 +4,7 @@ export interface Contribution {
   user_id: string;
   memberName?: string;
   descripcion: string;
-  amount: string;
+  amount: number;
   owner_id: string;
   currency: string;
   status: StatusContribution;

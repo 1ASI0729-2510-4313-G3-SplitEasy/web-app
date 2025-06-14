@@ -52,9 +52,11 @@ export class LoginComponent {
               this._houseService.getAllByRepre(user.id).subscribe({
                 next: (houseList) => {
                   localStorage.setItem('currentHouse', houseList[0].id);
-                  this.router.navigate(['/representative/home']);
+                  this.router.navigate(['/representative/members']);
                 },
-                error: (err) => {},
+                error: (err) => {
+                  alert('erro  house!');
+                },
               });
             } else {
               this.router.navigate(['/member/home']);

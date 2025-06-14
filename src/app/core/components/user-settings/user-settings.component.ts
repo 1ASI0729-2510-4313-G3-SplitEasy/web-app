@@ -46,6 +46,7 @@ export class UserSettingsComponent {
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       role: ['', [Validators.required]],
+      salary: [0, [Validators.required, Validators.min(0)]],
     });
 
     this.userPasswordForm = this.fb.group({
@@ -66,12 +67,14 @@ export class UserSettingsComponent {
           userFormValue.email,
           userFormValue.role,
           userFormValue.firstName,
-          userFormValue.lastName
+          userFormValue.lastName,
+          userFormValue.salary
         )
         .subscribe({
           next: (res) => {
             this.user = res;
             alert('Data user Update Succesfull');
+            localStorage.setItem('currentUser', JSON.stringify(res));
             this.cancelUser();
           },
           error: () => {
@@ -89,6 +92,7 @@ export class UserSettingsComponent {
       firstName: [this.user.firstName, [Validators.required]],
       lastName: [this.user.lastName, [Validators.required]],
       role: [this.user.role, [Validators.required]],
+      salary: [this.user.salary, [Validators.required, Validators.min(0)]],
     });
     this.userForm.disable();
   }
@@ -107,6 +111,7 @@ export class UserSettingsComponent {
         .subscribe({
           next: (res) => {
             alert('change password succesfull');
+            localStorage.setItem('currentUser', JSON.stringify(res));
             this.cancelPasswordUser();
           },
           error: (err) => {

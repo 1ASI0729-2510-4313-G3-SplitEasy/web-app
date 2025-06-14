@@ -23,13 +23,15 @@ export class UserService {
     email: string,
     role: Roles,
     firstName: string,
-    lastName: string
+    lastName: string,
+    salary: number
   ): Observable<User> {
     return this.http.patch<User>(this.url + '/' + user_id, {
       email: email,
       role: role,
       firstName: firstName,
       lastName: lastName,
+      salary: salary,
     });
   }
 
