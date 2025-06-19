@@ -82,7 +82,7 @@ body {
 }
 
 .hero-section {
-  background: url(/images/portada.png) no-repeat center;
+  background: url(../public/assets/images/portada.png) no-repeat center;
   background-size: cover;
   width: 100%;
 }
