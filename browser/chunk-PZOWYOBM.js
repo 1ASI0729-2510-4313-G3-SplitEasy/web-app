@@ -1,0 +1,1 @@
+import{$a as r,Da as o,Qa as t,Ra as n}from"./chunk-GUCOMCN7.js";import"./chunk-2NFLSA4Y.js";var p=class m{static \u0275fac=function(e){return new(e||m)};static \u0275cmp=o({type:m,selectors:[["app-home-member"]],decls:2,vars:0,template:function(e,i){e&1&&(t(0,"p"),r(1,"home-member works!"),n())},encapsulation:2})};export{p as HomeMemberComponent};
