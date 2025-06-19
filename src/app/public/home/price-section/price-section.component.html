@@ -1,25 +1,25 @@
 <!-- Prices Section -->
 <section class="container my-5" id="prices">
-  <h1 class="text-center mb-4">Prices</h1>
+  <h1 class="text-center mb-4">{{ 'PRICES.TITLE' | translate }}</h1>
   <div class="row justify-content-center g-4">
+
     <!-- Plan Free -->
     <div class="col-md-5 d-flex">
       <div class="card text-center precio-card w-100 bg-black text-white border-white">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h2 class="card-title">Free</h2>
-            <h3 class="card-subtitle text-white">S/ 0.00 / monthly</h3>
+            <h2 class="card-title">{{ 'PRICES.FREE.TITLE' | translate }}</h2>
+            <h3 class="card-subtitle text-white">{{ 'PRICES.FREE.PRICE' | translate }}</h3>
             <ul class="list-unstyled mt-5 mb-4">
-              <li>✓
-                1 home</li>
-              <li>✓
-                Up to 3 members</li>
-              <li>✓
-                Basic expense record</li>
-              <li style="opacity: 0">
+              <li>✓ {{ 'PRICES.FREE.HOME' | translate }}</li>
+              <li>✓ {{ 'PRICES.FREE.MEMBERS' | translate }}</li>
+              <li>✓ {{ 'PRICES.FREE.RECORD' | translate }}</li>
+              <li style="opacity: 0">placeholder</li>
             </ul>
           </div>
-          <a href="login.html" class="btn btn-outline-light rounded-pill mt-5">Get started for free</a>
+          <a routerLink="/login" class="btn btn-outline-light rounded-pill mt-5">
+            {{ 'PRICES.FREE.CTA' | translate }}
+          </a>
         </div>
       </div>
     </div>
@@ -29,20 +29,18 @@
       <div class="card text-center precio-card w-100 bg-black text-white border-white">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h2 class="card-title">Premium</h2>
-            <h3 class="card-subtitle mb-2 text-light">S/ 9.90 / monthly</h3>
+            <h2 class="card-title">{{ 'PRICES.PREMIUM.TITLE' | translate }}</h2>
+            <h3 class="card-subtitle mb-2 text-light">{{ 'PRICES.PREMIUM.PRICE' | translate }}</h3>
             <ul class="list-unstyled mt-5 mb-4">
-              <li>✓ Unlimited homes</li>
-              <li>✓
-                Unlimited members</li>
-              <li>✓
-                Graphic display</li>
-              <li>✓
-                Smart notifications</li>
+              <li>✓ {{ 'PRICES.PREMIUM.HOMES' | translate }}</li>
+              <li>✓ {{ 'PRICES.PREMIUM.MEMBERS' | translate }}</li>
+              <li>✓ {{ 'PRICES.PREMIUM.GRAPH' | translate }}</li>
+              <li>✓ {{ 'PRICES.PREMIUM.NOTIFICATIONS' | translate }}</li>
             </ul>
           </div>
-          <a href="login.html" class="btn btn-outline-light rounded-pill mt-auto">
-            Choose Premium</a>
+          <a routerLink="/login" class="btn btn-outline-light rounded-pill mt-auto">
+            {{ 'PRICES.PREMIUM.CTA' | translate }}
+          </a>
         </div>
       </div>
     </div>

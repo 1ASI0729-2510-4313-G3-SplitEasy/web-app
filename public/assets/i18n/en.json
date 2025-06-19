@@ -1,0 +1,129 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "SERVICES": "Services",
+    "HOW_IT_WORKS": "How does it work?",
+    "PRICES": "Prices",
+    "REVIEWS": "Reviews",
+    "CONTACT": "Contact us",
+    "LOGIN": "Login"
+  },
+  "ABOUT": {
+    "TITLE": "About The Product",
+    "MISSION_TITLE": "Mission",
+    "MISSION_TEXT": "Our mission is to facilitate household financial management through a digital tool that distributes shared expenses proportionally to each member's income, promoting equity, transparency, and harmony in living together.",
+    "VISION_TITLE": "Vision",
+    "VISION_TEXT": "Our vision is to become the leading shared financial management platform for households in Latin America, recognized for empowering people to make fair, responsible, and collaborative financial decisions.",
+    "WHY_TITLE": "Why was SplitEasy created?",
+    "WHY_TEXT_1": "SplitEasy was born out of the need of many families and cohabitation groups who face difficulties in sharing expenses fairly.",
+    "WHY_TEXT_2": "The platform addresses a common problem: the lack of financial clarity and equity in households, especially when incomes are unequal. With SplitEasy, we seek to eliminate unnecessary tension and promote a more harmonious and fair environment for all.",
+    "WHO_TITLE": "Who are we?",
+    "WHO_TEXT_1": "SplitEasy is a project developed by <strong>ChabeCode</strong>, a team of students from the Peruvian University of Applied Sciences (UPC) committed to offering digital solutions that promote equity and well-being in everyday life. Our approach combines technology with social empathy to solve real problems affecting thousands of households.",
+    "WHO_TEXT_2": "With SplitEasy, we want to transform the way people manage shared expenses, offering a simple, intuitive, and fair platform that adapts to the needs of each household. We know that financial management can be stressful, especially when incomes vary, and that's why we designed a tool that distributes expenses proportionally and transparently.",
+    "WHO_TEXT_3": "At <strong>ChabeCode</strong>, we believe that a good life starts with good financial organization. And SplitEasy is here to help."
+  },
+  "HERO": {
+    "DESCRIPTION": "At SplitEasy, we know how important it is to maintain a balanced financial life. Our system allows you to divide and manage expenses equitably among household members, without complications or arguments. Divide expenses proportionally, based on each person's income, and maintain efficient and fair control for everyone.",
+    "SUBTEXT": "Make financial management easy and fair for everyone at home!",
+    "REGISTER_BUTTON": "Register"
+  },
+  "HOW_IT_WORKS": {
+    "TITLE": "How does it work?",
+    "REP": {
+      "HEADER": "If you are a representative of the household",
+      "SIGNUP_TITLE": "Sign up",
+      "SIGNUP_TEXT": "Create your account in minutes and access it from any device.",
+      "CREATE_TITLE": "Create your home",
+      "CREATE_TEXT": "Add members and define your family or shared group.",
+      "ASSIGN_TITLE": "Assign contributions",
+      "ASSIGN_TEXT": "Define how much each person contributes according to their monthly income.",
+      "CONTROL_TITLE": "Control your finances",
+      "CONTROL_TEXT": "View expenses, balances, and alerts easily."
+    },
+    "MEMBER": {
+      "HEADER": "If you are a member of the household",
+      "SIGNUP_TITLE": "Sign up",
+      "SIGNUP_TEXT": "Create your account with your email or favorite social network.",
+      "JOIN_TITLE": "Join a household",
+      "JOIN_TEXT": "Enter the household ID provided by your representative.",
+      "INCOME_TITLE": "Declare your income",
+      "INCOME_TEXT": "Declare your monthly income to automatically calculate your contribution.",
+      "MONITOR_TITLE": "Monitor your contributions",
+      "MONITOR_TEXT": "Check your contributions and stay on top of your financial responsibilities."
+    }
+  },
+  "PRICES": {
+    "TITLE": "Prices",
+    "FREE": {
+      "TITLE": "Free",
+      "PRICE": "S/ 0.00 / monthly",
+      "HOME": "1 home",
+      "MEMBERS": "Up to 3 members",
+      "RECORD": "Basic expense record",
+      "CTA": "Get started for free"
+    },
+    "PREMIUM": {
+      "TITLE": "Premium",
+      "PRICE": "S/ 9.90 / monthly",
+      "HOMES": "Unlimited homes",
+      "MEMBERS": "Unlimited members",
+      "GRAPH": "Graphic display",
+      "NOTIFICATIONS": "Smart notifications",
+      "CTA": "Choose Premium"
+    }
+  },
+  "REVIEWS": {
+    "TITLE": "Reviews",
+    "REVIEW1": {
+      "NAME": "María López",
+      "ROLE": "Graphic Designer",
+      "TEXT": "SplitEasy has helped me so much when splitting expenses with my roommates. Everything is clear and no one argues anymore!"
+    },
+    "REVIEW2": {
+      "NAME": "Carlos Fernández",
+      "ROLE": "Engineering Student",
+      "TEXT": "The app makes sharing expenses in my department super easy. Highly recommended."
+    },
+    "REVIEW3": {
+      "NAME": "José Ramírez",
+      "ROLE": "Family Guy",
+      "TEXT": "Thanks to SplitEasy, I can see how much each member of my family contributes. It's fair and easy to use!"
+    }
+  },
+  "SERVICES": {
+    "TITLE": "Services",
+    "SERVICE1": {
+      "TITLE": "Proportional Calculus",
+      "DESCRIPTION": "Automatically divide expenses based on each household member's income, promoting equity."
+    },
+    "SERVICE2": {
+      "TITLE": "Expense Tracking",
+      "DESCRIPTION": "Easily see how much you've contributed and how your household spends money."
+    },
+    "SERVICE3": {
+      "TITLE": "Transparency and Collaboration",
+      "DESCRIPTION": "Promotes communication and fair agreements between household members."
+    },
+    "SERVICE4": {
+      "TITLE": "Multi-device access",
+      "DESCRIPTION": "Manage your finances from your phone, tablet, or computer without losing functionality."
+    }
+  },
+  "FOOTER": {
+    "FOLLOW_US": "Follow us",
+    "LEGAL": {
+      "TITLE": "Legal information",
+      "LEGAL_NOTICE": "Legal notice",
+      "PRIVACY": "Privacy Policy",
+      "COOKIES": "Cookies policy",
+      "FAQ": "Frequently asked questions"
+    },
+    "SUPPORT": {
+      "TITLE": "Support",
+      "CONTACT": "Contact support",
+      "HELP": "Help Center"
+    },
+    "RIGHTS": "All rights reserved."
+  }
+}

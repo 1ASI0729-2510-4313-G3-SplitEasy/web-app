@@ -1,0 +1,129 @@
+{
+  "NAV": {
+    "HOME": "Inicio",
+    "ABOUT": "Acerca de",
+    "SERVICES": "Servicios",
+    "HOW_IT_WORKS": "¿Cómo funciona?",
+    "PRICES": "Precios",
+    "REVIEWS": "Opiniones",
+    "CONTACT": "Contáctanos",
+    "LOGIN": "Iniciar sesión"
+  },
+  "ABOUT": {
+    "TITLE": "Sobre el producto",
+    "MISSION_TITLE": "Misión",
+    "MISSION_TEXT": "Nuestra misión es facilitar la gestión financiera del hogar a través de una herramienta digital que distribuya los gastos compartidos proporcionalmente al ingreso de cada miembro, promoviendo la equidad, la transparencia y la armonía en la convivencia.",
+    "VISION_TITLE": "Visión",
+    "VISION_TEXT": "Nuestra visión es convertirnos en la principal plataforma de gestión financiera compartida para hogares en América Latina, reconocida por empoderar a las personas a tomar decisiones financieras justas, responsables y colaborativas.",
+    "WHY_TITLE": "¿Por qué se creó SplitEasy?",
+    "WHY_TEXT_1": "SplitEasy nació de la necesidad de muchas familias y grupos de convivencia que enfrentan dificultades para compartir los gastos de forma equitativa.",
+    "WHY_TEXT_2": "La plataforma aborda un problema común: la falta de claridad y equidad financiera en los hogares, especialmente cuando los ingresos son desiguales. Con SplitEasy, buscamos eliminar tensiones innecesarias y promover un ambiente más armonioso y justo para todos.",
+    "WHO_TITLE": "¿Quiénes somos?",
+    "WHO_TEXT_1": "SplitEasy es un proyecto desarrollado por <strong>ChabeCode</strong>, un equipo de estudiantes de la Universidad Peruana de Ciencias Aplicadas (UPC) comprometidos con ofrecer soluciones digitales que promuevan la equidad y el bienestar en la vida cotidiana. Nuestro enfoque combina tecnología con empatía social para resolver problemas reales que afectan a miles de hogares.",
+    "WHO_TEXT_2": "Con SplitEasy, queremos transformar la forma en que las personas gestionan los gastos compartidos, ofreciendo una plataforma simple, intuitiva y justa que se adapte a las necesidades de cada hogar. Sabemos que la gestión financiera puede ser estresante, especialmente cuando los ingresos varían, y por eso diseñamos una herramienta que distribuya los gastos de manera proporcional y transparente.",
+    "WHO_TEXT_3": "En <strong>ChabeCode</strong> creemos que una buena vida comienza con una buena organización financiera. Y SplitEasy está aquí para ayudarte."
+  },
+  "HERO": {
+    "DESCRIPTION": "En SplitEasy, sabemos lo importante que es mantener una vida financiera equilibrada. Nuestro sistema te permite dividir y gestionar los gastos de forma equitativa entre los miembros del hogar, sin complicaciones ni discusiones. Divide los gastos proporcionalmente, según los ingresos de cada persona, y mantén un control eficiente y justo para todos.",
+    "SUBTEXT": "¡Haz que la gestión financiera sea fácil y justa para todos en casa!",
+    "REGISTER_BUTTON": "Registrarse"
+  },
+  "HOW_IT_WORKS": {
+    "TITLE": "¿Cómo funciona?",
+    "REP": {
+      "HEADER": "Si eres representante del hogar",
+      "SIGNUP_TITLE": "Regístrate",
+      "SIGNUP_TEXT": "Crea tu cuenta en minutos y accede desde cualquier dispositivo.",
+      "CREATE_TITLE": "Crea tu hogar",
+      "CREATE_TEXT": "Agrega miembros y define tu grupo familiar o compartido.",
+      "ASSIGN_TITLE": "Asigna contribuciones",
+      "ASSIGN_TEXT": "Define cuánto aporta cada persona según sus ingresos mensuales.",
+      "CONTROL_TITLE": "Controla tus finanzas",
+      "CONTROL_TEXT": "Visualiza gastos, saldos y alertas de forma sencilla."
+    },
+    "MEMBER": {
+      "HEADER": "Si eres miembro del hogar",
+      "SIGNUP_TITLE": "Regístrate",
+      "SIGNUP_TEXT": "Crea tu cuenta con tu correo electrónico o red social favorita.",
+      "JOIN_TITLE": "Únete a un hogar",
+      "JOIN_TEXT": "Ingresa el ID del hogar proporcionado por tu representante.",
+      "INCOME_TITLE": "Declara tus ingresos",
+      "INCOME_TEXT": "Declara tus ingresos mensuales para calcular automáticamente tu contribución.",
+      "MONITOR_TITLE": "Monitorea tus aportes",
+      "MONITOR_TEXT": "Consulta tus aportes y mantente al día con tus responsabilidades financieras."
+    }
+  },
+  "PRICES": {
+    "TITLE": "Precios",
+    "FREE": {
+      "TITLE": "Gratis",
+      "PRICE": "S/ 0.00 / mensual",
+      "HOME": "1 hogar",
+      "MEMBERS": "Hasta 3 miembros",
+      "RECORD": "Registro básico de gastos",
+      "CTA": "Comenzar gratis"
+    },
+    "PREMIUM": {
+      "TITLE": "Premium",
+      "PRICE": "S/ 9.90 / mensual",
+      "HOMES": "Hogares ilimitados",
+      "MEMBERS": "Miembros ilimitados",
+      "GRAPH": "Visualización gráfica",
+      "NOTIFICATIONS": "Notificaciones inteligentes",
+      "CTA": "Elegir Premium"
+    }
+  },
+  "REVIEWS": {
+    "TITLE": "Reseñas",
+    "REVIEW1": {
+      "NAME": "María López",
+      "ROLE": "Diseñadora Gráfica",
+      "TEXT": "SplitEasy me ha ayudado muchísimo para dividir gastos con mis compañeras de cuarto. ¡Todo es claro y ya no hay discusiones!"
+    },
+    "REVIEW2": {
+      "NAME": "Carlos Fernández",
+      "ROLE": "Estudiante de Ingeniería",
+      "TEXT": "La app hace muy fácil compartir gastos en mi departamento. Altamente recomendada."
+    },
+    "REVIEW3": {
+      "NAME": "José Ramírez",
+      "ROLE": "Padre de Familia",
+      "TEXT": "Gracias a SplitEasy puedo ver cuánto aporta cada miembro de mi familia. ¡Es justo y fácil de usar!"
+    }
+  },
+  "SERVICES": {
+    "TITLE": "Servicios",
+    "SERVICE1": {
+      "TITLE": "Cálculo Proporcional",
+      "DESCRIPTION": "Divide automáticamente los gastos según los ingresos de cada miembro del hogar, promoviendo la equidad."
+    },
+    "SERVICE2": {
+      "TITLE": "Seguimiento de Gastos",
+      "DESCRIPTION": "Visualiza fácilmente cuánto has aportado y cómo se gasta el dinero en tu hogar."
+    },
+    "SERVICE3": {
+      "TITLE": "Transparencia y Colaboración",
+      "DESCRIPTION": "Promueve la comunicación y acuerdos justos entre los miembros del hogar."
+    },
+    "SERVICE4": {
+      "TITLE": "Acceso Multidispositivo",
+      "DESCRIPTION": "Administra tus finanzas desde tu celular, tablet o computadora sin perder funcionalidad."
+    }
+  },
+  "FOOTER": {
+    "FOLLOW_US": "Síguenos",
+    "LEGAL": {
+      "TITLE": "Información legal",
+      "LEGAL_NOTICE": "Aviso legal",
+      "PRIVACY": "Política de privacidad",
+      "COOKIES": "Política de cookies",
+      "FAQ": "Preguntas frecuentes"
+    },
+    "SUPPORT": {
+      "TITLE": "Soporte",
+      "CONTACT": "Contacto de soporte",
+      "HELP": "Centro de ayuda"
+    },
+    "RIGHTS": "Todos los derechos reservados."
+  }
+}

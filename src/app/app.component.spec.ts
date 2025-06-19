@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'split-easy-app' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('split-easy-app');
+    expect(app['title']).toEqual('split-easy-app');
   });
 
   it('should render title', () => {

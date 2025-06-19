@@ -12,6 +12,7 @@
         <span class="text-split">Split</span><span class="text-easy">Easy</span>
       </span>
     </a>
+
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
@@ -27,8 +28,7 @@
             height="24"
             class="d-inline-block align-text-top"
           />
-          <span class="text-food">Split</span
-          ><span class="text-heaven">Easy</span>
+          <span class="text-food">Split</span><span class="text-heaven">Easy</span>
         </a>
         <button
           type="button"
@@ -37,59 +37,54 @@
           aria-label="Close"
         ></button>
       </div>
+
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link mx-lg-2" [routerLink]="['/']">
-              <i class="bi bi-house-door-fill"></i> Home
+              <i class="bi bi-house-door-fill"></i> {{ 'NAV.HOME' | translate }}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="about">
-              <i class="bi bi-info-circle-fill"></i> About
+              <i class="bi bi-info-circle-fill"></i> {{ 'NAV.ABOUT' | translate }}
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link mx-lg-2"
-              [routerLink]="['/']"
-              fragment="services"
-            >
-              <i class="bi bi-gear-fill"></i> Services
+            <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="services">
+              <i class="bi bi-gear-fill"></i> {{ 'NAV.SERVICES' | translate }}
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link mx-lg-2"
-              [routerLink]="['/']"
-              fragment="howdoesitwork"
-            >
-              <i class="bi bi-question-circle-fill"></i> How does it work?
+            <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="howdoesitwork">
+              <i class="bi bi-question-circle-fill"></i> {{ 'NAV.HOW_IT_WORKS' | translate }}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="prices">
-              <i class="bi bi-currency-dollar"></i> Prices
+              <i class="bi bi-currency-dollar"></i> {{ 'NAV.PRICES' | translate }}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="reviews">
-              <i class="bi bi-chat-left-quote-fill"></i> Reviews
+              <i class="bi bi-chat-left-quote-fill"></i> {{ 'NAV.REVIEWS' | translate }}
             </a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link mx-lg-2"
-              [routerLink]="['/']"
-              fragment="contactus"
-            >
-              <i class="bi bi-envelope-fill"></i> Contact us
+            <a class="nav-link mx-lg-2" [routerLink]="['/']" fragment="contactus">
+              <i class="bi bi-envelope-fill"></i> {{ 'NAV.CONTACT' | translate }}
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <a [routerLink]="['/login']" class="login-button">Login</a>
+
+    <app-language-switcher class="ms-3"></app-language-switcher>
+
+    <a [routerLink]="['/login']" class="login-button">
+      {{ 'NAV.LOGIN' | translate }}
+    </a>
+
     <button
       class="navbar-toggler pe-0"
       type="button"
